@@ -1,20 +1,50 @@
-import { Heading } from './components/Heading';
-
 import './styles/theme.css';
 import './styles/global.css';
+
+import { Container } from './components/Container';
+import { Logo } from './components/Logo';
+import { Menu } from './components/Menu';
+import { CountDown } from './components/CountDown';
+import { DefaultInput } from './components/DefaultInput';
+import { Cycles } from './components/Cycles';
+import { DefaultButton } from './components/DefaultButton';
+import { PlayCircleIcon, StopCircleIcon } from 'lucide-react';
 
 export function App() {
   return (
     <>
-      <Heading>Ola! 1</Heading>
-      <Heading>Ola! 2</Heading>
-      <Heading>Ola! 3</Heading>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-        recusandae autem quaerat nam laborum, dolore, aspernatur sit consectetur
-        dicta amet unde fugiat at nemo tenetur quibusdam obcaecati voluptatibus
-        asperiores eveniet!
-      </p>
+      <Container>
+        <Logo />
+      </Container>
+      <Container>
+        <Menu />
+      </Container>
+      <Container>
+        <CountDown />
+      </Container>
+
+      <Container>
+        <form className='form' action=''>
+          <div className='formRow'>
+            <DefaultInput
+              labelText='Teste'
+              id='meuInput'
+              type='text'
+              placeholder='Digite algo'
+            />
+          </div>
+          <div className='formRow'>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div className='formRow'>
+            <Cycles />
+          </div>
+          <div className='formRow'>
+            <DefaultButton icon={<PlayCircleIcon />} color='green' />
+            <DefaultButton icon={<StopCircleIcon />} color='red' />
+          </div>
+        </form>
+      </Container>
     </>
   );
 }
